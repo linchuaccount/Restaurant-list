@@ -1,11 +1,18 @@
-<div class="card" style="width: 18rem;">
-  <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
-    alt="restaurant_photo">
-  <div class="card-body">
-    <h5 class="card-title">Sababa 沙巴巴中東美食</h5>
-    <p class="englich-name">Sababa Pita Bar</p>
-    <p class="card-text">中東料理
-    </p>
-    <a href="#" class="btn btn-primary">更多...</a>
+<div class="row" id="data-panel">
+  {{#each restaurants}}
+  <div class="col-sm-3">
+    <a href="restaurant/{{this.id}}">
+      <div class="card">
+        <img src="{{this.image}}" class="card-img-top" alt="restaurant_photo">
+        <div class="card-body">
+          <h5 class="card-title">{{this.name}}</h5>
+          <p class="englich-name">{{this.name_en}}</p>
+          <p class="card-text">{{this.category}}
+          </p>
+          <a href="#" class="btn btn-primary">更多...</a>
+        </div>
+      </div>
+    </a>
   </div>
+  {{/each}}
 </div>

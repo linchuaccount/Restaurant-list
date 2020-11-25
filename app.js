@@ -2,13 +2,14 @@
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
+const restaurantList = require('./restaurant.json')
 
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}))
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
 // 設定路由
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', { restaurants: restaurantList.results })
 })
 
 // 設定 port 3000
